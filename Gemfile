@@ -37,4 +37,16 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'libnotify'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+end
 
+gem 'haml-rails'
+gem 'sprockets-rails'
+gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
