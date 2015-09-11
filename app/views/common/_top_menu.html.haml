@@ -4,8 +4,15 @@
       %ul.nav.navbar-nav
         %li
           = link_to "ОБЛАЧНЫЕ СЕРВИСЫ SAAS"
-        %li
-          = link_to "БЕЗОПАСНОСТЬ"
+        %li.dropdown
+          = link_to "#", { class: 'dropdown-toggle',data: {toggle: 'dropdown'}} do
+            Безопасность
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              =link_to "Article 1"
+            %li
+              =link_to "Article 2"
         %li
           = link_to "ТАРИФЫ"
         %li

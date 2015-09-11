@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Century Gothic";
+  src: asset-url( "gothic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+html, body{
+  font-family: Century Gothic
+
+}
+
+
+.container{
+  width: 1040px;
+
+}
+
+a.btn.btn-default{
+  background-color: #576fdd;
+  color: #fff;
+  text-transform: uppercase;
+
+}
+
+.product-block{
+  display: flex;
+
+}
+
+.left-cloud{
+  height: 450px;
+  background: transparent url("leftcloud.png") no-repeat;
+  background-size: 120%
+
+}
+
+.right-cloud{
+  height: 450px;
+  background: transparent url("rightcloud.png") no-repeat;
+  background-size: 120%;
+
+}
+
+.cloud1{
+  height: 100px;
+  width: 200px;
+  background: transparent url("cloud1.png") no-repeat;
+  background-size: 200px 100px;
+}
+
+.cloud2{
+  height: 100px;
+  width: 200px;
+  background: transparent url("cloud2.png") no-repeat;
+  background-size: 200px 100px;
+}
+
