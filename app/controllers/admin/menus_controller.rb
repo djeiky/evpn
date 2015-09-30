@@ -1,6 +1,4 @@
-class Admin::MenusController < ApplicationController
-  layout "admin"
-  before_filter :is_admin?
+class Admin::MenusController < AdminController
 
   def index
     @menus = Menu.all

@@ -1,0 +1,20 @@
+%h3 Тип Продукта
+%table.table
+  %th ID
+  %th Название
+  %th Действия
+  -@product_types.each do |p|
+    %tr
+      %td
+        =p.id
+      %td
+        =p.name
+      %td
+        =link_to "edit", edit_admin_product_type_path(p)
+        \|
+        =link_to "delete", admin_product_type_path(p), method: :delete, :data => {:confirm => "Are you sure?``"}
+
+%p
+  =link_to "new", new_admin_product_type_path
+
+

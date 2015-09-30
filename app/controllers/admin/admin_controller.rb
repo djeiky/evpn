@@ -1,6 +1,4 @@
-class Admin::AdminController < ApplicationController
-  layout "admin"
-  before_filter :is_admin?
+class Admin::AdminController < AdminController
 
   def index
   end

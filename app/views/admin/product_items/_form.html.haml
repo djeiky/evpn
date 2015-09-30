@@ -1,0 +1,13 @@
+=form_for ["admin", @product_item] do |item|
+  = item.collection_select( :product_type_id, ProductType.all, :id, :name)
+  %br
+  = item.label :name
+  = item.text_field :name
+  %br
+  = item.label :cost
+  = item.text_field :cost
+  %br
+  = item.label :description
+  = item.text_area :description
+  %br
+  = item.submit "Сохранить"

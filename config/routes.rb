@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
+
   mount Ckeditor::Engine => '/ckeditor'
-  resources :products, only: [:index, :show]
 
   resources :articles, only: [:index, :show]
 
@@ -16,7 +16,8 @@ Rails.application.routes.draw do
     root "admin#index"
     resources :articles
     resources :menus , except: [:show]
-    resources :products
+    resources :product_types, except: [:show]
+    resources :product_items
   end
 
 

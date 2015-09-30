@@ -1,7 +1,5 @@
 module Admin
-  class ArticlesController < ApplicationController
-    layout "admin"
-    before_filter :is_admin?
+  class ArticlesController < AdminController
 
     before_action :set_article, only: [:show, :edit, :update, :destroy]
 

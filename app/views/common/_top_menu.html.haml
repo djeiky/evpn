@@ -9,9 +9,7 @@
             Безопасность
             %b.caret
           %ul.dropdown-menu
-            - @menus.find {|menu| menu.name == "security_menu"}.menu_items.each do |m|
-              %li
-                = link_to m.title, m.url
+            /- @menus.find {|menu| menu.name == "security_menu"}.menu_items.each do |m|
 
         %li
           = link_to "ТАРИФЫ"

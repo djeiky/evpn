@@ -1,0 +1,23 @@
+%h3 Список продуктов
+%table.table
+  %th ID
+  %th Название
+  %th Тип продукта
+  %th Стоимость
+  %th Действия
+  - @product_items.each do |p|
+    %tr
+      %td
+        = p.id
+      %td
+        = p.name
+      %td
+        =p.product_type.name
+      %td
+        = p.cost
+      %td
+        = link_to "edit", edit_admin_product_item_path(p)
+        \|
+        = link_to "delete", admin_product_item_path(p), method: :delete, :data => "Are you sure?"
+%p
+  =link_to "new", new_admin_product_item_path
