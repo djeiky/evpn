@@ -1,0 +1,15 @@
+=form_for ["admin", @menu] do |f|
+  %p
+    =f.label :name
+    =f.text_field :name, autofocus: true
+
+  %h3 Menu Items
+  = f.fields_for :menu_items do |mit|
+    =mit.label :title
+    =mit.text_field :title
+    =mit.label :url
+    =mit.text_field :url
+    =mit.hidden_field :id
+    %br
+  %p
+    =f.submit

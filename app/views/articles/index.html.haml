@@ -1,0 +1,18 @@
+%h1 Listing articles
+
+%table
+  %thead
+    %tr
+      %th Body
+      %th
+      %th
+      %th
+
+  %tbody
+    - @articles.each do |article|
+      %tr
+        %td= article.body
+        %td= link_to 'Show', article
+
+%br
+

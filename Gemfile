@@ -55,3 +55,6 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'i18n'
+
+gem 'ckeditor'
+gem 'paperclip'

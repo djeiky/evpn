@@ -8,12 +8,23 @@
   %body
     = render :partial => "common/top_address"
     = render :partial => "common/top_menu"
-    %p.notice
-      = notice
-    %p.alert
-      = alert
-    .container
-      =yield
+    .container{:style => "min-height: 500px;"}
+      - if current_page? root_url
+        = yield
+      - else
+        =render_breadcrumbs
+        .col-sm-3{style: "padding: 0 0 0 0;"}
+          = render :partial => "common/left_menu"
+        .col-sm-9
+          - if notice
+            %p.notice
+              = notice
+          - if alert
+            %p.alert
+          = alert
+
+          =yield
+
     = render :partial => "common/footer"
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 

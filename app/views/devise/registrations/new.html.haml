@@ -1,0 +1,24 @@
+%h3.blue-text Создать учетную запись
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .field
+    = f.label "e-mail"
+    %br
+    = f.email_field :email, autofocus: true
+  .field
+    = f.label "Пароль"
+    - if @minimum_password_length
+      %em (минимальная длина пароля #{@minimum_password_length})
+    %br
+    =f.password_field :password, autocomplit: "off"
+    %br
+  .field
+    = f.label "Подтверждение пароля"
+    %br
+    = f.password_field :password_confirmation, autocomplit: "off"
+    %br
+    %br
+    .action
+      = f.submit "Зарeгистрироваться"
+=render "devise/shared/links"
+

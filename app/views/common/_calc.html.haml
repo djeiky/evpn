@@ -1,0 +1,32 @@
+.row.calc-back-color.blue-text
+  %h3{:style => "text-align: center;"}Рассчет стоимости
+  %table.table#calc
+    -@products.each do |p|
+      %tr
+        %td.col-md-2
+          %input{:type => "checkbox", :value => p.cost, :onclick => "cacl();"}
+        %td.col-md-2
+          = p.name
+        %td.col-md-2
+          = p.cost
+        %td.col-md-3
+          .spinner.input-group
+            %span.input-group-btn
+              %button.btn.btn-default{:type => "button", :onclick => "btnDown(this);"} -
+            %input.form-control.count{:value => 0, :onchange => "calc();", :style => "text-align: center;"}
+            %span.input-group-btn
+              %button.btn.btn-default{:type => "button", :onclick => "btnUp(this);"} +
+
+        %td.col-md-2.row-count
+          0
+    %tr
+      %td.col-md-2
+      %td.col-md-2
+      %td.col-md-2
+      %td.col-md-2{:style => "text-align:right;"}
+        %b
+          Итого:
+      %td.col-md-2#itog
+        %b
+          0
+

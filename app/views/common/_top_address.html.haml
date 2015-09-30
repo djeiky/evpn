@@ -1,19 +1,21 @@
 .container
   #top-row.row
     .col-sm-3{style: "margin-top: 15px;"}
-      = image_tag "logo.jpg", :alt => "e-vpn.ru", :class => "top-logo"
-      = image_tag "logo-text.png", :class => "logo-text"
+      = link_to image_tag( "logo.jpg", :alt => "e-vpn.ru", :class => "top-logo"), root_path
+      = link_to image_tag( "logo-text.png", :class => "logo-text"), root_path
     .col-sm-3{style: "margin-top: 20px;"}
       = link_to "Панель управления"
       %br
-      = link_to "#" do
+      %br
+      = link_to new_user_session_path do
         %span.glyphicon.glyphicon-log-in
         Личный кабинет
     .col-sm-3{style: "margin-top: 20px;"}
-      = link_to "#" do
+      = link_to new_user_registration_path do
         %span.glyphicon.glyphicon-user
         Регистрация
 
+      %br
       %br
       = link_to "Мои заказы"
     .col-sm-3{style: "text-align: center;"}

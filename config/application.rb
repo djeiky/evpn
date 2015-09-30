@@ -25,6 +25,8 @@ module Evpn
     config.i18n.enforce_available_locales = false
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 #    I18n.default_locale = :ru
+    #
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
 
   end
 end
