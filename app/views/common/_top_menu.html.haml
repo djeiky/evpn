@@ -3,7 +3,7 @@
     .container
       %ul.nav.navbar-nav
         %li
-          = link_to "ОБЛАЧНЫЕ СЕРВИСЫ SAAS", products_path
+          = link_to "ОБЛАЧНЫЕ СЕРВИСЫ SAAS", "/"
         %li.dropdown
           = link_to articles_path, { class: 'dropdown-toggle',data: {toggle: 'dropdown'}} do
             Безопасность
@@ -12,7 +12,7 @@
             /- @menus.find {|menu| menu.name == "security_menu"}.menu_items.each do |m|
 
         %li
-          = link_to "ТАРИФЫ"
+          = link_to "ТАРИФЫ", product_types_path
         %li
           = link_to "ОПЛАТА"
         %li

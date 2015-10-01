@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :product_types, only: [:index]
+
   mount Ckeditor::Engine => '/ckeditor'
 
   resources :articles, only: [:index, :show]

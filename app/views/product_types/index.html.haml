@@ -1,0 +1,20 @@
+%h3.blue-text Наши тарифы
+%a.btn.btn-default Сделать заказ
+- @product_types.each do |type|
+  .panel.panel-default
+    .panel-heading
+      %b.blue-text
+        =type.name
+    .panel-body
+      %table.table.tariffs-table
+        - type.product_items.each do |item|
+          %tr
+            %td.tname
+              =item.name
+            %td
+              =item.cost
+            %td.it-count
+              = text_field "", ""
+            %td
+              %button В Корзину
+
