@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  resources :orders, only: [:index, :create]
+
+  resources :cart_items
+
   resources :product_types, only: [:index]
 
   mount Ckeditor::Engine => '/ckeditor'

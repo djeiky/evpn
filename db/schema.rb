@@ -11,13 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930140856) do
+ActiveRecord::Schema.define(version: 20151001151441) do
 
   create_table "articles", force: true do |t|
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
+  end
+
+  create_table "cart_items", force: true do |t|
+    t.integer  "count"
+    t.integer  "cart_id"
+    t.integer  "product_item_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id"
+  add_index "cart_items", ["product_item_id"], name: "index_cart_items_on_product_item_id"
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "ckeditor_assets", force: true do |t|
@@ -51,6 +67,25 @@ ActiveRecord::Schema.define(version: 20150930140856) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "order_items", force: true do |t|
+    t.integer  "product_item_id"
+    t.decimal  "price",           precision: 8, scale: 2
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "order_items", ["product_item_id"], name: "index_order_items_on_product_item_id"
+
+  create_table "orders", force: true do |t|
+    t.boolean  "paid",       default: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "product_items", force: true do |t|
     t.string   "name"
