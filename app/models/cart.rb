@@ -11,6 +11,13 @@ class Cart < ActiveRecord::Base
     current_item
 
   end
+  def is_empty?
+    if cart_items.length == 0
+      true
+    else
+      false
+    end
+  end
 
 
 end

@@ -4,4 +4,8 @@ class ProductTypesController < ApplicationController
     @product_types = ProductType.all
     @cart_items = current_cart.cart_items
   end
+
+  def description
+    @product_types = ProductType.all
+  end
 end

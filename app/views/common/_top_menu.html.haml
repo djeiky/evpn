@@ -3,12 +3,16 @@
     .container
       %ul.nav.navbar-nav
         %li
-          = link_to "ОБЛАЧНЫЕ СЕРВИСЫ SAAS", "/"
+          = link_to "ОБЛАЧНЫЕ СЕРВИСЫ SAAS", description_path
         %li.dropdown
           = link_to articles_path, { class: 'dropdown-toggle',data: {toggle: 'dropdown'}} do
             Безопасность
             %b.caret
           %ul.dropdown-menu
+            - if @main_menus.menu_items.length > 0
+              - @main_menus.menu_items.each do |menu|
+                %li
+                  = link_to menu.title, menu.url
             /- @menus.find {|menu| menu.name == "security_menu"}.menu_items.each do |m|
 
         %li

@@ -4,20 +4,27 @@
       = link_to image_tag( "logo.jpg", :alt => "e-vpn.ru", :class => "top-logo"), root_path
       = link_to image_tag( "logo-text.png", :class => "logo-text"), root_path
     .col-sm-3{style: "margin-top: 20px;"}
-      = link_to "Панель управления"
-      %br
-      %br
-      = link_to new_user_session_path do
-        %span.glyphicon.glyphicon-log-in
-        Личный кабинет
+      - if user_signed_in?
+        = link_to cabinet_url do
+          %span.glyphicon.glyphicon-log-in
+          Личный кабинет
+      - else
+        = link_to new_user_session_path do
+          %span.glyphicon.glyphicon-log-in
+          Личный кабинет
     .col-sm-3{style: "margin-top: 20px;"}
-      = link_to new_user_registration_path do
-        %span.glyphicon.glyphicon-user
-        Регистрация
+      - if user_signed_in?
+        = link_to destroy_user_session_path, :method => :delete do
+          = current_user.email
+          %span.glyphicon.glyphicon-log-out
+      - else
+        = link_to new_user_session_path do
+          %span.glyphicon.glyphicon-user
+          Вход
 
       %br
       %br
-      = link_to "Мои заказы"
+      = link_to "Мои заказы", cart_show_path
     .col-sm-3{style: "text-align: center;"}
       %h3 +7(495)5046064
       = link_to "Обратный звонок","#" ,:class => "btn btn-default"

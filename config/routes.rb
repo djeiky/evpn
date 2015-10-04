@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'cart/show'
 
-  resources :orders, only: [:index, :create]
+  get 'cabinet' => 'pages#cabinet'
+  get 'description' => "product_types#description"
+
+  resources :orders, only: [:index, :create, :show]
 
   resources :cart_items
 

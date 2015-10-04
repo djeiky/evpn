@@ -1,0 +1,24 @@
+%h3 Ваш заказ
+=link_to "Оформить заказ", orders_path, :method => :post, :class => "btn btn-default"
+
+%table.table.table-default
+  %th Наименование товара
+  %th Стоимость
+  %th Количество
+  - total = 0
+  - @cart.cart_items.each do |item|
+    %tr
+      %td
+        = item.product_item.name
+      %td
+        = item.product_item.cost
+      %td
+        = item.count
+    - total += item.product_item.cost*item.count
+
+  %tr
+    %td
+    %td
+      %b Итого:
+    %td
+      = total

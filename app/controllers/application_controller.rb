@@ -19,7 +19,8 @@ class ApplicationController < ActionController::Base
   end
 
   def retrieve_menus
-    @menus = Menu.all
+    @main_menus = Menu.where(:name => "security").first
+    @left_menus = Menu.where(:name => "left_menu").first
   end
 
   def current_cart
@@ -31,6 +32,21 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
+    @cart = current_cart
+    if !@cart.is_empty?
+      user = User.find_by_id current_user.id
+      @order = user.orders.build
+      @cart.cart_items.each do |item|
+        @order.order_items.build(product_item_id: item.product_item_id, price: item.product_item.cost, count: item.count)
+
+      end
+
+      user.save
+      @cart.destroy
+      return order_url @order
+    else
+      return root_url
+    end
 
   end
 
