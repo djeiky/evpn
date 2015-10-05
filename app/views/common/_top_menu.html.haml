@@ -9,7 +9,7 @@
             Безопасность
             %b.caret
           %ul.dropdown-menu
-            - if @main_menus.menu_items.length > 0
+            - if @main_menus && @main_menus.menu_items.length > 0
               - @main_menus.menu_items.each do |menu|
                 %li
                   = link_to menu.title, menu.url

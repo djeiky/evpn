@@ -1,5 +1,5 @@
 %ul.list-group.left-menu
-  -if @left_menus.menu_items.length > 0
+  -if @left_menus && @left_menus.menu_items.length > 0
     -@left_menus.menu_items.each do |menu|
       %li.list-group-item
         =link_to menu.title, menu.url

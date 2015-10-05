@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
   end
 
   def retrieve_menus
-    @main_menus = Menu.where(:name => "security")
-    @left_menus = Menu.where(:name => "left_menu")
+    @main_menus = Menu.where(:name => "security").first
+    @left_menus = Menu.where(:name => "left_menu").first
   end
 
   def current_cart
