@@ -51,7 +51,7 @@ group :test, :development do
   gem 'capistrano-ssh-doctor'
   gem 'capistrano-bundler'
   gem 'capistrano-passenger'
-
+  gem 'capistrano-rvm'
 end
 
 gem 'haml-rails'
