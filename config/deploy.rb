@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:djeiky/evpn.git'
 set :deploy_user, 'zhenya'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-set :branch, fetch(:branch, 'rewrite')
+#set :branch, fetch(:branch, 'rewrite')
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/vhosts/e-vpn.ru/httpdocs'
