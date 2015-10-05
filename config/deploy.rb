@@ -19,7 +19,7 @@ set :scm, :git
 # set :format, :pretty
 
 # Default value for :log_level is :debug
-# set :log_level, :debug
+set :log_level, :debug
 
 # Default value for :pty is false
 set :pty, true
@@ -57,7 +57,7 @@ namespace :deploy do
     task :restart do
 	on roles(:app), in: :sequence, wait: 5 do
 	    execute :mkdir, '-p', release_path.join('tmp')
-	    execute :touch, release_path.join('tmp/restart.txt') 
+	    execute :touch, release_path.join('tmp/restart.txt')
 	end
     end
     after :publishing, :restart
