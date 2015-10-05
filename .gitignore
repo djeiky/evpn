@@ -16,3 +16,6 @@
 /tmp
 /spec
 *.swp
+/public
+/config/database.yml
+/config/secrets.yml

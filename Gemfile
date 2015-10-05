@@ -44,6 +44,14 @@ group :test, :development do
   gem 'libnotify'
   gem 'factory_girl_rails'
   gem 'launchy'
+  #Capistrano
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-ssh-doctor'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+
 end
 
 gem 'haml-rails'
