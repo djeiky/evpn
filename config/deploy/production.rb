@@ -17,9 +17,9 @@
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-role :app, %w{zhenya@e-vpn.ru}, my_property: :my_value
-role :web, %w{zhenya@e-vpn.ru}, other_property: :other_value
-role :db,  %w{zhenya@e-vpn.ru}
+role :app, %w{zhenya@46.4.133.85}, my_property: :my_value
+role :web, %w{zhenya@46.4.133.85}, other_property: :other_value
+role :db,  %w{zhenya@46.4.133.85}
 
 server 'e-vpn.ru', user: 'zhenya', roles: %w{web app db}, my_property: :my_value, ssh_optioins: {forward_agent: true}
 
