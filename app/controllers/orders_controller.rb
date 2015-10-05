@@ -1,9 +1,6 @@
 class OrdersController < ApplicationController
 
-  before_action :authenticate_user! , only: [:index, :show]
   before_action :set_order, only: [:show]
-  before_action :set_menus, only: [:show, :index]
-
 
   def create
     if !user_signed_in?
@@ -12,14 +9,16 @@ class OrdersController < ApplicationController
     end
 
     @cart = current_cart
-    user = User.find_by_id current_user.id
-    order = user.orders.build
+      user = User.find_by_id current_user.id
 
-    @cart.cart_items.each do |item|
+    if !@cart.is_empty?
+      order = user.orders.build
+
+      @cart.cart_items.each do |item|
       order.order_items.build(product_item_id: item.product_item_id, price: item.product_item.cost, count: item.count)
 
+      end
     end
-
     user.save
     @cart.destroy
 
@@ -39,11 +38,10 @@ class OrdersController < ApplicationController
     @order = Order.find params[:id]
   end
 
-  def set_menus
-    @left_menus = Menu.where(:name => "cabinet_menu").first
-  end
 
   def order_params
 
   end
+
+
 end
