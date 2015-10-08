@@ -5,9 +5,9 @@
         = image_tag item.image.url, :style => "width: 200px; margin-top: 30px;"
     .col-md-8.col-md-offset-1
       .inline-div
-        %h3{:style => "float: left;"}
+        %h4{:style => "float: left;"}
           = item.name
-        %h3.blue-text{:style => "float: right;"}
+        %h4.blue-text{:style => "float: right;"}
           - if item.product_items.length > 0
             от
             = item.product_items[0].cost
