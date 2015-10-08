@@ -43,6 +43,6 @@ class Admin::ProductTypesController < AdminController
   end
 
   def type_params
-    params.require(:product_type).permit(:name)
+    params.require(:product_type).permit(:name, :image, :tempfile, :description)
   end
 end
