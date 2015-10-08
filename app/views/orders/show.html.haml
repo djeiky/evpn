@@ -1,35 +1,38 @@
-.panel.panel-default
-  .panel-heading
-    %b.blue-text
-      ID счета
-      = @order.id
-    %b{:style => "float:right;"}
-      - if @order.paid
-        %b{:style => "color: green;"}
-          Оплачен
-      - else
-        %b{:style => "color:red;"}
-          Не Оплачен
-  .panel-body
-    %table.table.table-default
-      %th Наименование
-      %th Количество
-      %th Стоимость
-      - @order.order_items.each do |item|
+= form_tag controller: "payment", action: "show" do
+  = hidden_field_tag(:order_id, @order.id)
+  .panel.panel-default
+    .panel-heading
+      %b.blue-text
+        ID счета
+        = @order.id
+      %b{:style => "float:right;"}
+        - if @order.paid
+          %b{:style => "color: green;"}
+            Оплачен
+        - else
+          %b{:style => "color:red;"}
+            Не Оплачен
+    .panel-body
+      %table.table.table-default
+        %th Наименование
+        %th Количество
+        %th Стоимость
+        - @order.order_items.each do |item|
+          %tr
+            %td
+              = item.product_item.name
+            %td
+              = item.count
+            %td
+              = item.count * item.price
+
         %tr
           %td
-            = item.product_item.name
           %td
-            = item.count
+            %b Итого:
           %td
-            = item.count * item.price
-
-      %tr
-        %td
-        %td
-          %b Итого:
-        %td
-          - sum = 0
-          - @order.order_items.each {|item| sum += item.price * item.count}
-          = sum
+            - sum = 0
+            - @order.order_items.each {|item| sum += item.price * item.count}
+            = sum
+  = submit_tag "Оплатить"
 

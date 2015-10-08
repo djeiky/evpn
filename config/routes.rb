@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'cabinet' => 'pages#cabinet'
   get 'description' => "product_types#description"
+  post 'payment' => "payment#show"
 
   resources :orders, only: [:index, :create, :show]
 

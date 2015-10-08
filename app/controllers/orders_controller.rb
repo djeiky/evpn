@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     end
     user.save
     @cart.destroy
-
+    redirect_to order_path(order)
 
   end
 
