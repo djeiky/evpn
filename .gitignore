@@ -19,4 +19,4 @@
 /public
 /config/database.yml
 /config/secrets.yml
-/config/enviroments/production.rb
+/config/environments/production.rb
