@@ -10,6 +10,7 @@ class ArticlesController < ApplicationController
 
   def show
     add_breadcrumb @article.title, request.path
+    @title = "#{@article.title} - #{@title}"
     respond_with(@article)
   end
 

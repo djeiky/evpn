@@ -6,9 +6,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_filter :retrieve_menus
-
+  before_action :set_title
 
   private
+
+  def set_title
+    @title = "e-vpn.ru"
+  end
+
 
   def is_admin?
     if user_signed_in? and current_user.admin?

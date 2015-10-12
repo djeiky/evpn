@@ -26,10 +26,13 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @title = "Счета - #{@title}"
   end
 
   def index
     @orders = Order.where(:user_id => current_user.id)
+    @title = "Счета - #{@title}"
+
   end
 
   private
