@@ -2,23 +2,23 @@
   .row.text-center
     .product-block
       %col-md-2
-        = link_to image_tag("own_cloud.png"), "/arcicles/"
+        = link_to image_tag("own_cloud.png"), "/arcicles/1"
         %h4 Частное облако
         %p Это безопасная облачная модель, которая имеет ряд преимуществ по сравнению с частным и с публичным облаком
       %col-md-2
-        = link_to image_tag("1c.png"), "/articles/"
+        = link_to image_tag("1c.png"), "/articles/14"
         %h4 Аренда 1С
         %p Аренда 1С в облаке по схеме SaaS позволит пользоваться программным обеспечением, как услугой с помесячной оплатой
       %col-md-2
-        = link_to image_tag("ms.png"), "/articles/"
+        = link_to image_tag("ms.png"), "/articles/13"
         %h4 Аренда Office и другого ПО Microsft
         %p Аренда ПО Microsoft в облаке существенно уменьшает расходы на приобретение бизнес приложений Microsoft
       %col-md-2
-        = link_to image_tag("mail.png"), "/articles/"
+        = link_to image_tag("mail.png"), "/articles/12"
         %h4 Аренда бизнес почты
         %p В стоимость услуги входит: подключение и первичные настройки, антиспам, антивирус, резервное копирование, поддержка 24/7
       %col-md-2
-        = link_to image_tag("virt.png"), "/articles/"
+        = link_to image_tag("virt.png"), "/articles/16"
         %h4 Виртуальный рабочий стол
         %p Отсутствие капитальных затрат, существенное сокращение расходов на покупку и модернизацию ПК
   .row.product-block
@@ -60,6 +60,9 @@
     %h4{style: "text-align: center;"}
       Экономическое обоснование аренды оборудования и программного обеспечения.
       = image_tag "pdf.png"
+  .row
+    .col-md-2.col-md-offset-5
+      = link_to "Оформить заказ", product_types_path, :class => "btn btn-default"
 
   /=render :partial => "common/calc"
 
