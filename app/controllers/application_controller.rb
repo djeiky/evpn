@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :retrieve_menus
   before_action :set_title
+  before_action :set_cart_total_items
 
   private
 
@@ -34,6 +35,16 @@ class ApplicationController < ActionController::Base
     cart = Cart.create
     session[:cart_id] = cart.id
     cart
+  end
+
+  def set_cart_total_items
+    cart = current_cart
+    @total_cart_items = 0
+    if cart.cart_items
+      cart.cart_items.each do |item|
+        @total_cart_items += item.count
+      end
+    end
   end
 
   def after_sign_in_path_for(resource)
