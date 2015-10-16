@@ -14,3 +14,5 @@
             руб/мес
       %p.text-justify
         = item.description
+      %p{:style => "text-align:center;"}
+        = link_to "Заказать", product_types_path, :class => "btn btn-default"
