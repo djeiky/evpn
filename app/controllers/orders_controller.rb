@@ -27,11 +27,14 @@ class OrdersController < ApplicationController
 
   def show
     @title = "Счета - #{@title}"
+    @left_menus = Menu.where(:name => "cabinet_menu").first
+
   end
 
   def index
     @orders = Order.where(:user_id => current_user.id)
     @title = "Счета - #{@title}"
+     @left_menus = Menu.where(:name => "cabinet_menu").first
 
   end
 

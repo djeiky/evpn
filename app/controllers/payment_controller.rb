@@ -7,6 +7,8 @@ class PaymentController < ApplicationController
     @total = 0
     @order.order_items.each do |item|
       @total += item.count * item.price
+    @left_menus = Menu.where(:name => "cabinet_menu").first
+
     end
   end
 
