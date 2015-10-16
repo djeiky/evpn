@@ -3,6 +3,8 @@
   %head
     %title=@title
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
     = csrf_meta_tags
 
   %body
@@ -26,5 +28,11 @@
           =yield
 
     = render :partial => "common/footer"
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    <!-- RedHelper-->
+    %script{ :id => "rhlpscrtg", :type => "text/javascript", :charset => "utf-8", :async => "async", :src => "https://web.redhelper.ru/service/main.js?charset=evpn"}
+    <!-- /RedHelper -->
+
+
+
+
 
