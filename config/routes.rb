@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'cart/show'
 
   get 'cabinet' => 'pages#cabinet'
+  get 'latest_news' => 'pages#news_items'
   get 'description' => "product_types#description"
   post 'payment' => "payment#show"
 
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
     resources :menus , except: [:show]
     resources :product_types, except: [:show]
     resources :product_items
+    resources :article_types
   end
 
 

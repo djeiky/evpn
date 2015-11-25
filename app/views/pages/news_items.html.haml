@@ -1,0 +1,10 @@
+%h3.blue-text Новости
+.row
+  -@news_items.each do |ni|
+    .row
+      %h3= ni.title
+      = strip_tags(ni.body).truncate(255)
+      %br
+      = link_to "Подробнее...", article_path(ni)
+
+

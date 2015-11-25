@@ -12,4 +12,13 @@ class PagesController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
+  def news_items
+    news_type = ArticleType.where(name: "news").first
+    if news_type
+      @news_items = news_type.articles
+    else
+      @news_items = {}
+    end
+  end
 end

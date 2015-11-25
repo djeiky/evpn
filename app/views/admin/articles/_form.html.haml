@@ -9,6 +9,9 @@
   .field
     = f.label :title
     = f.text_field :title
+    %br
+    = f.collection_select(:article_type_id, ArticleType.all, :id, :name)
+    %br
     = f.label :body
     = f.cktext_area :body
   .actions

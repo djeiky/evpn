@@ -1,0 +1,15 @@
+%table.table
+  %thead
+    %th Название
+    %th Действия
+  - @article_types.each do |article|
+    %tr
+      %td
+        = article.name
+      %td
+        = link_to "Edit", edit_admin_article_type_path( article)
+        |
+        = link_to 'Destroy', admin_article_type_path(article), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= link_to "new", new_admin_article_type_path
+

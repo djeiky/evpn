@@ -11,14 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008085229) do
+ActiveRecord::Schema.define(version: 20151125151739) do
+
+  create_table "article_types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "articles", force: true do |t|
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
+    t.integer  "article_type_id"
   end
+
+  add_index "articles", ["article_type_id"], name: "index_articles_on_article_type_id"
 
   create_table "cart_items", force: true do |t|
     t.integer  "count"

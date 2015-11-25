@@ -45,7 +45,7 @@ module Admin
       end
 
       def article_params
-        params.require(:article).permit(:body, :title)
+        params.require(:article).permit(:body, :title, :article_type_id)
       end
   end
 end

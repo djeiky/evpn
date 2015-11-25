@@ -1,20 +1,23 @@
 %h1 Listing articles
 
-%table
+%table.table
   %thead
     %tr
       %th Body
-      %th
-      %th
-      %th
+      %th Тип статьи
+      %th Действия
 
   %tbody
     - @articles.each do |article|
       %tr
         %td= article.title
-        %td= link_to 'Show', admin_article_path(article)
-        %td= link_to 'Edit', edit_admin_article_path(article)
-        %td= link_to 'Destroy', admin_article_path(article), :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= article.article_type.name
+        %td
+          = link_to 'Show', admin_article_path(article)
+          |
+          = link_to 'Edit', edit_admin_article_path(article)
+          |
+          = link_to 'Destroy', admin_article_path(article), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
